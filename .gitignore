@@ -108,4 +108,4 @@ Backup*/
 UpgradeLog*.XML
 
 ib-dotnet/App_data
-ib-dotnet/.nuget
+.nuget
