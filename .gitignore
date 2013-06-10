@@ -109,3 +109,4 @@ UpgradeLog*.XML
 
 ib-dotnet/App_data
 .nuget
+packages
