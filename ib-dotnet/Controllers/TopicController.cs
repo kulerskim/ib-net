@@ -40,8 +40,6 @@ namespace ib_dotnet.Conrollers
 
         public ActionResult Create()
         {
-            ViewBag.CreatedBy = db.Users.First();
-
             return View();
         }
 
@@ -52,6 +50,9 @@ namespace ib_dotnet.Conrollers
         [ValidateAntiForgeryToken]
         public ActionResult Create(Topic topic)
         {
+
+            topic.CreatedBy = db.Users.First();
+
             if (ModelState.IsValid)
             {
                 db.Topics.Add(topic);

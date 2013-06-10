@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
@@ -7,7 +8,7 @@ using System.Web;
 
 namespace ib_dotnet.Models
 {
-    public class Topic
+    public class Topic : ILoggableEntity
     {
         [Key]
         public int TopicId { get; set; }
@@ -17,11 +18,12 @@ namespace ib_dotnet.Models
 
         [Required, MinLength(1)]
         public String Content { get; set; }
-
-        [Required]
+        
         public DateTime CreatedAt{ get; set; }
-      
+              
         public int CreatedById { get; set; }
+      
+        
         [ForeignKey("CreatedById")]
         public virtual User CreatedBy { get; set; }
 

@@ -7,7 +7,7 @@ using System.Web;
 
 namespace ib_dotnet.Models
 {
-    public class Reply
+    public class Reply : ILoggableEntity
     {
         [Key]
         public int ReplyId { get; set; }

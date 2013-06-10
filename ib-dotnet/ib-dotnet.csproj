@@ -145,6 +145,7 @@
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\IbContext.cs" />
+    <Compile Include="Models\ILoggableEntity.cs" />
     <Compile Include="Models\Reply.cs" />
     <Compile Include="Models\Topic.cs" />
     <Compile Include="Controllers\TopicController.cs" />
