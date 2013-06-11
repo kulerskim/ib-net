@@ -13,6 +13,8 @@ namespace ib_dotnet.Models
         public int ReplyId { get; set; }
 
         [Required]
+        public int TopicId { get; set; }
+        [ForeignKey("TopicId")]
         public virtual Topic Topic { get; set; }
 
         [Required, MinLength(1)] 

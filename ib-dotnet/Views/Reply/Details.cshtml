@@ -1,0 +1,36 @@
+﻿@model ib_dotnet.Models.Reply
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Reply</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Content)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Content)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.CreatedAt)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.CreatedAt)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.CreatedBy.Name)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.CreatedBy.Name)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.ReplyId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

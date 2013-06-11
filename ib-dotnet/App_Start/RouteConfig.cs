@@ -14,6 +14,13 @@ namespace ib_dotnet
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
             routes.MapRoute(
+                name: "Topic replies", 
+                url: "Topic/{topicId}/Reply/{action}/{id}",
+                defaults: new { controller = "Reply", action = "Index", id = UrlParameter.Optional}
+            );
+
+
+            routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Topic", action = "Index", id = UrlParameter.Optional }

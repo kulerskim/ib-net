@@ -24,5 +24,10 @@ namespace ib_dotnet.Models
 
             return base.SaveChanges();
         }
+
+        public IbContext()
+        {
+            Configuration.ProxyCreationEnabled = false;
+        }
     }
 }

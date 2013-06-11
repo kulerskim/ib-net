@@ -136,12 +136,17 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\ReplyController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Migrations\201306101032115_iniialMigration.cs" />
     <Compile Include="Migrations\201306101032115_iniialMigration.Designer.cs">
       <DependentUpon>201306101032115_iniialMigration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201306111141537_topic_reply_relationship.cs" />
+    <Compile Include="Migrations\201306111141537_topic_reply_relationship.Designer.cs">
+      <DependentUpon>201306111141537_topic_reply_relationship.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\IbContext.cs" />
@@ -250,6 +255,11 @@
     <Content Include="Views\Topic\Create.cshtml" />
     <Content Include="Views\Topic\Edit.cshtml" />
     <Content Include="Views\Topic\Delete.cshtml" />
+    <Content Include="Views\Reply\Index.cshtml" />
+    <Content Include="Views\Reply\Details.cshtml" />
+    <Content Include="Views\Reply\Create.cshtml" />
+    <Content Include="Views\Reply\Edit.cshtml" />
+    <Content Include="Views\Reply\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -260,6 +270,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201306101032115_iniialMigration.resx">
       <DependentUpon>201306101032115_iniialMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201306111141537_topic_reply_relationship.resx">
+      <DependentUpon>201306111141537_topic_reply_relationship.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -4,40 +4,22 @@
     ViewBag.Title = "Details";
 }
 
-<h2>Details</h2>
+<h1>@Html.DisplayNameFor(model => model.Title)</h1>
+<p class="muted">Created by @Html.DisplayFor(model => model.CreatedBy.Name) on @Html.DisplayFor(model => model.CreatedAt)</p>
+<p>@Html.DisplayFor(model => model.Content)</p>
+<div class="btn-group">
+    @Html.RouteLink("Add Reply", "Topic replies", new { topicId = Model.TopicId, action="Create", controller="Reply"}, new { @class="btn aaa"})
+    @Html.ActionLink("Edit", "Edit", new { id=Model.TopicId}, new {@class="btn" })
+    @Html.ActionLink("Back to List", "Index", new {}, new { @class = "btn" })
+</div>
+<h2>Replies</h2>
+<div class="replies">
+@foreach(var reply in Model.Replies)
+{
+    <article class="reply">
+        <p class="muted">Created by @reply.CreatedBy.Name on @reply.CreatedAt </p>
+        <p>@reply.Content</p>
+    </article>
+}
+</div>
 
-<fieldset>
-    <legend>Topic</legend>
-
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.Title)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.Title)
-    </div>
-
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.Content)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.Content)
-    </div>
-
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.CreatedAt)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.CreatedAt)
-    </div>
-
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.CreatedBy.Name)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.CreatedBy.Name)
-    </div>
-</fieldset>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id=Model.TopicId }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
