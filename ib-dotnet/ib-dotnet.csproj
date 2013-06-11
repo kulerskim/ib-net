@@ -148,6 +148,10 @@
     <Compile Include="Migrations\201306111141537_topic_reply_relationship.Designer.cs">
       <DependentUpon>201306111141537_topic_reply_relationship.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201306111336191_RemoveForeignKeyAnnotation.cs" />
+    <Compile Include="Migrations\201306111336191_RemoveForeignKeyAnnotation.Designer.cs">
+      <DependentUpon>201306111336191_RemoveForeignKeyAnnotation.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\IbContext.cs" />
     <Compile Include="Models\ILoggableEntity.cs" />
@@ -273,6 +277,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201306111141537_topic_reply_relationship.resx">
       <DependentUpon>201306111141537_topic_reply_relationship.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201306111336191_RemoveForeignKeyAnnotation.resx">
+      <DependentUpon>201306111336191_RemoveForeignKeyAnnotation.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

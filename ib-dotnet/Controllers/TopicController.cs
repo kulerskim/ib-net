@@ -27,7 +27,7 @@ namespace ib_dotnet.Conrollers
 
         public ActionResult Details(int id = 0)
         {
-            Topic topic = db.Topics.Find(id);
+            Topic topic = db.Topics.Include(t => t.Replies.Select(r => r.CreatedBy)).SingleOrDefault(t => t.TopicId == id);
             if (topic == null)
             {
                 return HttpNotFound();

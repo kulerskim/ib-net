@@ -27,16 +27,7 @@ namespace ib_dotnet.Models
         [ForeignKey("CreatedById")]
         public virtual User CreatedBy { get; set; }
 
-        public virtual IEnumerable<Reply> Replies { get; set; }
-
-        public Topic()
-        {
-            Replies = new List<Reply>();
-        }
-
-        
-
-
+        public virtual ICollection<Reply> Replies { get; set; }
         
     }
 }
