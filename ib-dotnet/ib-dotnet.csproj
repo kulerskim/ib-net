@@ -41,6 +41,18 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="container">
+      <HintPath>..\packages\I18N.1.0.8\lib\net40\container.dll</HintPath>
+    </Reference>
+    <Reference Include="i18n">
+      <HintPath>..\packages\I18N.1.0.8\lib\net40\i18n.dll</HintPath>
+    </Reference>
+    <Reference Include="i18n.MVC3">
+      <HintPath>..\packages\I18N.1.0.8\lib\net40\i18n.MVC3.dll</HintPath>
+    </Reference>
+    <Reference Include="i18n.PostBuild">
+      <HintPath>..\packages\I18N.1.0.8\lib\net40\i18n.PostBuild.exe</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
     <Reference Include="System.Data" />

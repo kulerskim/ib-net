@@ -1,4 +1,5 @@
-﻿using System;
+﻿using i18n;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -21,6 +22,7 @@ namespace ib_dotnet
             WebApiConfig.Register(GlobalConfiguration.Configuration);
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
+            I18N.Register();
             BundleConfig.RegisterBundles(BundleTable.Bundles);
         }
     }
