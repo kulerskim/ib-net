@@ -53,13 +53,13 @@ namespace ib_dotnet.Controllers
         {
             reply.Topic = db.Topics.Find(topicId);
             reply.CreatedBy = db.Users.First();
-            //if (ModelState.IsValid)
-            //{
+            if (ModelState.IsValid)
+            {
                 db.Replies.Add(reply);
                 db.SaveChanges();
-                return RedirectToAction("Index");
-            //}
-            //return View(reply);
+                return RedirectToAction("Details", "Topic", new {id=topicId});
+            }
+            return View(reply);
         }
 
         //
