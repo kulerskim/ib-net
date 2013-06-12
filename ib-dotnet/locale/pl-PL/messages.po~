@@ -3,7 +3,3 @@
 #: ..\Migrations\201306111336191_RemoveForeignKeyAnnotation.Designer.cs:24
 msgid "Target"
 msgstr ""
-
-#: ..\Views\Topic\Index.cshtml:7
-msgid "Listing Topics"
-msgstr ""

@@ -24,7 +24,5 @@ msgstr ""
 msgid "Target"
 msgstr ""
 
-#: ..\Views\Topic\Index.cshtml:7
-#, fuzzy
-msgid "Listing Topics"
-msgstr "נושאי רישום"
+#~ msgid "Listing topics"
+#~ msgstr "נושאי רישום"

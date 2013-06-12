@@ -41,18 +41,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="container">
-      <HintPath>..\packages\I18N.1.0.8\lib\net40\container.dll</HintPath>
-    </Reference>
-    <Reference Include="i18n">
-      <HintPath>..\packages\I18N.1.0.8\lib\net40\i18n.dll</HintPath>
-    </Reference>
-    <Reference Include="i18n.MVC3">
-      <HintPath>..\packages\I18N.1.0.8\lib\net40\i18n.MVC3.dll</HintPath>
-    </Reference>
-    <Reference Include="i18n.PostBuild">
-      <HintPath>..\packages\I18N.1.0.8\lib\net40\i18n.PostBuild.exe</HintPath>
-    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -170,6 +158,7 @@
     <Compile Include="Models\Reply.cs" />
     <Compile Include="Models\Topic.cs" />
     <Compile Include="Controllers\TopicController.cs" />
+    <Compile Include="Models\TranslatedWebViewPage.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -262,7 +251,9 @@
     <Content Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
-    <Content Include="Views\Web.config" />
+    <Content Include="Views\Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
@@ -294,6 +285,16 @@
       <DependentUpon>201306111336191_RemoveForeignKeyAnnotation.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Libraries\i18n\src\i18n.PostBuild\i18n.PostBuild.csproj">
+      <Project>{9be8e007-c6b8-43f7-83d2-e89f51ef8614}</Project>
+      <Name>i18n.PostBuild</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Libraries\i18n\src\i18n\i18n.csproj">
+      <Project>{e7a9bba3-8a95-492c-8806-4de63c1dba06}</Project>
+      <Name>i18n</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
@@ -323,6 +324,9 @@
     </VisualStudio>
   </ProjectExtensions>
   <Import Project="$(SolutionDir)\.nuget\nuget.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>"$(TargetDir)i18n.PostBuild.exe" "$(ProjectDir)"</PostBuildEvent>
+  </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
