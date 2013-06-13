@@ -79,7 +79,7 @@ publish
 *.Publish.xml
 
 # NuGet Packages Directory
-packages
+/packages
 
 # Windows Azure Build Output
 csx
@@ -108,4 +108,3 @@ Backup*/
 UpgradeLog*.XML
 
 ib-dotnet/App_data
-packages
